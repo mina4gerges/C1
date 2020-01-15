@@ -1,12 +1,12 @@
 remote_theme: ISSAE/architect
 
-name: Valeur C2 informatique AISL 
+name: Valeur C1 informatique AISL 
 
 author: Pascal Fares
 
 author_email: pascal.fares@isae.edu.lb
 
-title: Valeur C2 informatique
+title: Valeur C1 informatique
 
 description: AISL Cnam Liban
 
@@ -14,7 +14,7 @@ link1: support
 
 google_analytics: UA-29708002-2
 
-repository: ISSAE/C2
+repository: ISSAE/C1
 
 plugins:
   - jekyll-sitemap

@@ -1,3 +1,18 @@
+# Autour de Java PetStore
+Java PetStore est une application J2EE que Sun a créé en mai 2001 pour son programme de
+Blueprints. C'est un site web marchand où l'on peut choisir des animaux domestiques, les rajouter
+dans un panier, puis payer électroniquement. Ce Blueprint a permis de documenter les meilleures
+pratiques (code java, design pattern, architecture) pour développer une application J2EE. Le [Java PetStore](petStore.md) est aussitôt devenu un standard de fait puisque les constructeurs de serveur
+d'application l'ont utilisé pour démontrer la compatibilité de leur produit avec les spécifications
+J2EE. 
+En fait, Sun (puis Oracle) fut le premier à l'utiliser pour ses tests de montée en charge. Bien que Java
+PetStore ait été développé à des fins éducatives, Oracle déclara que cette application fonctionnait
+deux fois plus rapidement sur son serveur d'application que sur ceux de BEA ou IBM. La
+communauté s'enflamma et tous les vendeurs commencèrent à utiliser le [PetStore](petStore.md) pour
+démontrer leurs meilleures performances.
+
+En savoir plus : [PetStore](petStore.md)
+
 # Introduction (Par Antonio Goncalves avec adaptation)
 Comme beaucoup de personnes, aujourd hui, une des meilleures plate-forme de développement pour les applications d'entreprises est J2EE. Elle combine les avantages du langage Java avec les leçons acquises dans le développement depuis ces 10 à 20 dernières années. Elle bénéficie aussi du dynamisme des communautés Open Source ainsi que du JCP de Oracle  ([Java Community Process, processus utilisé par Oracle et de nombreux partenaires pour gérer les évolutions de java et de ces
 API](https://jcp.org/en/home/index)).

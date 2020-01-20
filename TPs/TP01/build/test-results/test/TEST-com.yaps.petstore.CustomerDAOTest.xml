@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.yaps.petstore.CustomerDAOTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2020-01-20T07:23:20" hostname="Pascal-AE15" time="0.007">
+  <properties/>
+  <testcase name="testFindCustomerWithInvalidValues" classname="com.yaps.petstore.CustomerDAOTest" time="0.001"/>
+  <testcase name="testUpdateCustomer" classname="com.yaps.petstore.CustomerDAOTest" time="0.0"/>
+  <testcase name="testCreateCustomer" classname="com.yaps.petstore.CustomerDAOTest" time="0.001"/>
+  <testcase name="testDeleteUnknownCustomer" classname="com.yaps.petstore.CustomerDAOTest" time="0.0"/>
+  <testcase name="testUpdateUnknownCustomer" classname="com.yaps.petstore.CustomerDAOTest" time="0.001"/>
+  <testcase name="testUpdateCustomerWithInvalidValues" classname="com.yaps.petstore.CustomerDAOTest" time="0.0"/>
+  <testcase name="testFindCustomerWithInvalidValues" classname="com.yaps.petstore.CustomerDAOTest" time="0.001"/>
+  <testcase name="testUpdateCustomer" classname="com.yaps.petstore.CustomerDAOTest" time="0.0"/>
+  <testcase name="testCreateCustomer" classname="com.yaps.petstore.CustomerDAOTest" time="0.0"/>
+  <testcase name="testDeleteUnknownCustomer" classname="com.yaps.petstore.CustomerDAOTest" time="0.0"/>
+  <testcase name="testUpdateUnknownCustomer" classname="com.yaps.petstore.CustomerDAOTest" time="0.0"/>
+  <testcase name="testUpdateCustomerWithInvalidValues" classname="com.yaps.petstore.CustomerDAOTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

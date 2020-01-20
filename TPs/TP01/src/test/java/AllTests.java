@@ -1,5 +1,5 @@
-package lb.edu.isae.tp00;
-
+import com.yaps.petstore.CustomerTest;
+import com.yaps.petstore.CustomerDAOTest;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
@@ -24,6 +24,7 @@ public final class AllTests extends TestCase {
         final TestSuite suite = new TestSuite();
 
         suite.addTest(CustomerTest.suite());
+        suite.addTest(CustomerDAOTest.suite());
 
         return suite;
     }

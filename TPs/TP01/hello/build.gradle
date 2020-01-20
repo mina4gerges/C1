@@ -1,0 +1,20 @@
+plugins {
+    id 'application'
+}
+mainClassName = "HelloPetstore"
+
+version = '1.0'
+
+task runHelloPetstoreControlee(type: Exec) {
+    dependsOn build
+    group = "Execution"
+    description = "Lancer avec controlee"
+    commandLine "java", "-classpath", sourceSets.main.runtimeClasspath.getAsPath(), "HelloPetstore", "controlee"
+}
+
+task runHelloPetstoreNonControlee(type: Exec) {
+    dependsOn build
+    group = "Execution"
+    description = "Lancer avec controlee"
+    commandLine "java", "-classpath", sourceSets.main.runtimeClasspath.getAsPath(), "HelloPetstore", "noncontrolee"
+}

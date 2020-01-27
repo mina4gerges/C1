@@ -28,9 +28,9 @@ public final class CustomerDAO {
     /**
      * This method gets a Customer object from the HashMap.
      *
-     * @param id Customer identifier to be found in the hastable
+     * @param id Customer identifier to be found in the hashtable
      * @return Customer the customer object with all its attributs set
-     * @throws CustomerNotFoundException is thrown if the customer id not found in the hastable
+     * @throws CustomerNotFoundException is thrown if the customer id not found in the hashtable
      */
     public Customer find(final String id) throws CustomerNotFoundException {
         // If the given id doesn't exist we throw a CustomerNotFoundException
@@ -42,10 +42,10 @@ public final class CustomerDAO {
     }
 
     /**
-     * This method inserts a Customer object into the HashMap and serializes the Hastable on disk.
+     * This method inserts a Customer object into the HashMap and serializes the hashtable on disk.
      *
-     * @param customer Customer Object to be inserted into the hastable
-     * @throws CustomerDuplicateKeyException is thrown when an identical object is already in the hastable
+     * @param customer Customer Object to be inserted into the hashtable
+     * @throws CustomerDuplicateKeyException is thrown when an identical object is already in the hashtable
      * @throws CustomerCheckException 
      */
     public void insert(final Customer customer) throws CustomerDuplicateKeyException, CustomerCheckException {
@@ -54,16 +54,16 @@ public final class CustomerDAO {
             throw new CustomerDuplicateKeyException();
         }
         customer.checkData();
-        // Puts the object into the hastable
+        // Puts the object into the hashtable
         _hashmap.put(customer.getId(), customer);
     }
 
     /**
-     * This method updates a Customer object of the HashMap and serializes the Hastable on disk.
+     * This method updates a Customer object of the HashMap and serializes the hashtable on disk.
      *
-     * @param customer Customer to be updated from the hastable
-     * @throws CustomerNotFoundException     is thrown if the customer id not found in the hastable
-     * @throws CustomerDuplicateKeyException is thrown when an identical object is already in the hastable
+     * @param customer Customer to be updated from the hashtable
+     * @throws CustomerNotFoundException     is thrown if the customer id not found in the hashtable
+     * @throws CustomerDuplicateKeyException is thrown when an identical object is already in the hashtable
      * @throws CustomerCheckException 
      */
 	public void update(final Customer customer) throws CustomerNotFoundException, CustomerDuplicateKeyException, CustomerCheckException {
@@ -74,9 +74,9 @@ public final class CustomerDAO {
 	}
 
     /**
-     * This method deletes a Customer object from the HashMap and serializes the Hastable on disk.
+     * This method deletes a Customer object from the HashMap and serializes the hashtable on disk.
      *
-     * @param id Customer identifier to be deleted from the hastable
+     * @param id Customer identifier to be deleted from the hashtable
      * @throws CustomerNotFoundException is thrown if there's a persistent problem
      */
     public void remove(final String id) throws CustomerNotFoundException {
@@ -85,7 +85,7 @@ public final class CustomerDAO {
             throw new CustomerNotFoundException();
         }
 
-        // The object is removed from the hastable
+        // The object is removed from the hashtable
         _hashmap.remove(id);
     }
     

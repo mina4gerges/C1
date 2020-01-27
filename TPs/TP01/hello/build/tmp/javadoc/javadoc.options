@@ -1,0 +1,7 @@
+-classpath 'C:\\Users\\mina2\\Desktop\\CNAM 2019-2020 (M2)\\S1\\Architecture logiciel java(1)\\TP\\C1\\TPs\\TP01\\hello\\build\\classes\\java\\main;C:\\Users\\mina2\\Desktop\\CNAM 2019-2020 (M2)\\S1\\Architecture logiciel java(1)\\TP\\C1\\TPs\\TP01\\hello\\build\\resources\\main'
+-d 'C:\\Users\\mina2\\Desktop\\CNAM 2019-2020 (M2)\\S1\\Architecture logiciel java(1)\\TP\\C1\\TPs\\TP01\\hello\\build\\docs\\javadoc'
+-doctitle 'hello 1.0 API'
+-notimestamp 
+-quiet 
+-windowtitle 'hello 1.0 API'
+'C:\\Users\\mina2\\Desktop\\CNAM 2019-2020 (M2)\\S1\\Architecture logiciel java(1)\\TP\\C1\\TPs\\TP01\\hello\\src\\main\\java\\HelloPetstore.java'

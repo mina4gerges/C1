@@ -1,4 +1,4 @@
-public class HelloPetstore {
+public class HelloPetstore{
 
     // Point d'entree de l'application
     public static void main(String[] args) {
@@ -19,11 +19,10 @@ public class HelloPetstore {
 
             // Si vous passez l'argument noncontrolee
         } else {
-
-            // Dans ce cas vous n'etes pas obliges de traiter l'exception
-            noncontrolee();
-            System.out.println("Ce texte ne s'affichera pas");
-        }
+        	// Dans ce cas vous n'etes pas obliges de traiter l'exception
+    		noncontrolee();
+    		System.out.println("Ce texte ne s'affichera pas");
+    	}
     }
 
     // Une exception controlee doit apparaitre dans la signature

@@ -152,235 +152,91 @@ Vous remarquerez que la granularité des cas d'utilisation est différente de ce
 
 ### Cas d'utilisation « Gérer les catégories »
 
-<table class="wiki-table" cellpadding="0" cellspacing="0" border="0">
+Nom: Gérer les catégories.</th>
 
-<tbody>
+Résumé: Permet à John de créer/modifier/supprimer/lister les catégories du catalogue.
 
-<tr>
+Acteurs: John.
 
-<th>Nom</th>
+Pré-conditions: Aucune
 
-<th>Gérer les catégories.</th>
-
-</tr>
-
-<tr class="table-odd">
-
-<td>Résumé</td>
-
-<td>Permet à John de créer/modifier/supprimer/lister les catégories du catalogue.</td>
-
-</tr>
-
-<tr class="table-even">
-
-<td>Acteurs</td>
-
-<td>John.</td>
-
-</tr>
-
-<tr class="table-odd">
-
-<td>Pré-conditions</td>
-
-<td>Aucune.</td>
-
-</tr>
-
-<tr class="table-even">
-
-<td>Description</td>
-
-<td>YAPS veut saisir les catégories de son catalogue et les persister. Elle pourra ensuite, si elle le désire, en modifier le contenu, supprimer certaines catégories, en afficher une ou la liste entière. Une catégorie contient les données suivantes :  
+Description: YAPS veut saisir les catégories de son catalogue et les persister. Elle pourra ensuite, si elle le désire, en modifier le contenu, supprimer certaines catégories, en afficher une ou la liste entière. Une catégorie contient les données suivantes :  
 - Category Id : identifiant unique de la catégorie ((1))((2)). Cet identifiant est construit manuellement par YAPS.  
 - Name : nom de la catégorie (ex. Poisson, Chien, Chat...)  
 - Description de la catégorie : (ex. Un chien est un animal affectueux qui partagera avec vous des moments de bonheur)  
 Une catégorie possède aussi une liste de produits.  
-Les champs Category Id, Name et Description sont obligatoires ((3)).</td>
+Les champs Category Id, Name et Description sont obligatoires ((3)).
 
-</tr>
-
-<tr class="table-odd">
-
-<td>Exceptions</td>
-
-<td>((1)) Si l'identifiant saisi existe déjà dans le système, une exception DuplicateKeyException est levée.  
+Exceptions: ((1)) Si l'identifiant saisi existe déjà dans le système, une exception DuplicateKeyException est levée.  
 ((2)) Lors d'une recherche, si l'identifiant n'est pas présent dans le système une exception ObjectNotFoundException est levée.  
 Si une erreur système se produit durant la création d'une catégorie, l'exception CreateException doit être levée.  
 Si une erreur système se produit durant la mise à jour d'une catégorie, l'exception UpdateException doit être levée.  
 Si une erreur système se produit durant la suppression d'une catégorie, l'exception RemoveException doit être levée.  
 Si une erreur système se produit durant la recherche d'une catégorie, l'exception FinderException doit être levée.  
-((3)) Une exception est levée si l'un des champs est manquant.</td>
+((3)) Une exception est levée si l'un des champs est manquant.
 
-</tr>
+Post-conditions: Une catégorie est créée/modifiée/supprimée/listée.
 
-<tr class="table-even">
 
-<td>Post-conditions</td>
-
-<td>Une catégorie est créée/modifiée/supprimée/listée.</td>
-
-</tr>
-
-</tbody>
-
-</table>
 
 ### Cas d'utilisation « Gérer les produits »
 
-<table class="wiki-table" cellpadding="0" cellspacing="0" border="0">
+Nom: Gérer les produits.</th>
 
-<tbody>
+Résumé: Permet à John de créer/modifier/supprimer/lister les produits du catalogue.
 
-<tr>
+Acteurs: John.
 
-<th>Nom</th>
+Pré-conditions: Pour la création/modification d'un produit, la catégorie à laquelle se rapporte le produit doit exister dans le système.
 
-<th>Gérer les produits.</th>
-
-</tr>
-
-<tr class="table-odd">
-
-<td>Résumé</td>
-
-<td>Permet à John de créer/modifier/supprimer/lister les produits du catalogue.</td>
-
-</tr>
-
-<tr class="table-even">
-
-<td>Acteurs</td>
-
-<td>John.</td>
-
-</tr>
-
-<tr class="table-odd">
-
-<td>Pré-conditions</td>
-
-<td>Pour la création/modification d'un produit, la catégorie à laquelle se rapporte le produit doit exister dans le système.</td>
-
-</tr>
-
-<tr class="table-even">
-
-<td>Description</td>
-
-<td>YAPS veut saisir les produits de son catalogue, les rattacher à une catégorie et les persister. Elle pourra ensuite, si elle le désire, en modifier le contenu, supprimer certains produits, en afficher un ou la liste entière. Un produit contient les données suivantes :  
+Description: YAPS veut saisir les produits de son catalogue, les rattacher à une catégorie et les persister. Elle pourra ensuite, si elle le désire, en modifier le contenu, supprimer certains produits, en afficher un ou la liste entière. Un produit contient les données suivantes :  
 - Product Id : identifiant unique du produit ((1))((2)). Cet identifiant est construit manuellement par YAPS.  
 - Name : nom du produit (ex. Bulldog, Caniche, Dalmatien...)  
 - Description du produit : (ex. Un caniche est un petit chien affectueux qui ne prendra pas trop de place et saura vous réconforter de sa tendresse)  
 Un produit contient une liste d'article.  
 Lorsqu'on affiche les données d'un produit, on veut aussi visualiser l'identifiant et le nom de la catégorie à laquelle se rattache le produit.  
-Les champs Product Id, Name et Description sont obligatoires ((3)).</td>
+Les champs Product Id, Name et Description sont obligatoires ((3)).
 
-</tr>
-
-<tr class="table-odd">
-
-<td>Exceptions</td>
-
-<td>((1)) Si l'identifiant saisi existe déjà dans le système, une exception DuplicateKeyException est levée.  
+Exceptions: ((1)) Si l'identifiant saisi existe déjà dans le système, une exception DuplicateKeyException est levée.  
 ((2)) Lors d'une recherche, si l'identifiant n'est pas présent dans le système une exception ObjectNotFoundException est levée.  
 Si une erreur système se produit durant la création d'un produit, l'exception CreateException doit être levée.  
 Si une erreur système se produit durant la mise à jour d'un produit, l'exception UpdateException doit être levée.  
 Si une erreur système se produit durant la suppression d'un produit, l'exception RemoveException doit être levée.  
 Si une erreur système se produit durant la recherche d'un produit, l'exception FinderException doit être levée.  
-((3)) Une exception est levée si l'un des champs est manquant.</td>
+((3)) Une exception est levée si l'un des champs est manquant.
 
-</tr>
+Post-conditions: Un produit est créé/modifié/supprimé/listé.
 
-<tr class="table-even">
 
-<td>Post-conditions</td>
-
-<td>Un produit est créé/modifié/supprimé/listé.</td>
-
-</tr>
-
-</tbody>
-
-</table>
 
 ### Cas d'utilisation « Gérer les articles »
 
-<table class="wiki-table" cellpadding="0" cellspacing="0" border="0">
+Nom: Gérer les articles.</th>
 
-<tbody>
+Résumé: Permet à John de créer/modifier/supprimer/lister les articles du catalogue.
 
-<tr>
+Acteurs: John.
 
-<th>Nom</th>
+Pré-conditions: Pour la création/modification d'un article, le produit auquel se rapporte l'article doit exister dans le système.
 
-<th>Gérer les articles.</th>
-
-</tr>
-
-<tr class="table-odd">
-
-<td>Résumé</td>
-
-<td>Permet à John de créer/modifier/supprimer/lister les articles du catalogue.</td>
-
-</tr>
-
-<tr class="table-even">
-
-<td>Acteurs</td>
-
-<td>John.</td>
-
-</tr>
-
-<tr class="table-odd">
-
-<td>Pré-conditions</td>
-
-<td>Pour la création/modification d'un article, le produit auquel se rapporte l'article doit exister dans le système.</td>
-
-</tr>
-
-<tr class="table-even">
-
-<td>Description</td>
-
-<td>YAPS veut saisir les articles de son catalogue, les rattacher à un produit et les persister. Elle pourra ensuite, si elle le désire, en modifier le contenu, supprimer certains articles, en afficher un ou la liste entière. Un article contient les données suivantes :  
+Description: YAPS veut saisir les articles de son catalogue, les rattacher à un produit et les persister. Elle pourra ensuite, si elle le désire, en modifier le contenu, supprimer certains articles, en afficher un ou la liste entière. Un article contient les données suivantes :  
 - Item Id : identifiant unique de l'article ((1))((2)). Cet identifiant est construit manuellement par YAPS.  
 - Name : nom de l'article (ex. Caniche 3 mois femelle...)  
 - Unit Cost : prix unitaire de l'article  
 Lorsqu'on affiche les données d'un article, on veut aussi visualiser l'identifiant et le nom du produit auquel se rattache l'article.  
-Les champs Item Id, Name et UnitCost sont obligatoires ((3)).</td>
+Les champs Item Id, Name et UnitCost sont obligatoires ((3)).
 
-</tr>
-
-<tr class="table-odd">
-
-<td>Exceptions</td>
-
-<td>((1)) Si l'identifiant saisi existe déjà dans le système, une exception DuplicateKeyException est levée.  
+Exceptions: ((1)) Si l'identifiant saisi existe déjà dans le système, une exception DuplicateKeyException est levée.  
 ((2)) Lors d'une recherche, si l'identifiant n'est pas présent dans le système une exception ObjectNotFoundException est levée.  
 Si une erreur système se produit durant la création d'un article, l'exception CreateException doit être levée.  
 Si une erreur système se produit durant la mise à jour d'un article, l'exception UpdateException doit être levée.  
 Si une erreur système se produit durant la suppression d'un article, l'exception RemoveException doit être levée.  
 Si une erreur système se produit durant la recherche d'un article, l'exception FinderException doit être levée.  
-((3)) Une exception est levée si l'un des champs est manquant.</td>
+((3)) Une exception est levée si l'un des champs est manquant.
 
-</tr>
+Post-conditions: Un article est créé/modifié/supprimé/listé.
 
-<tr class="table-even">
 
-<td>Post-conditions</td>
-
-<td>Un article est créé/modifié/supprimé/listé.</td>
-
-</tr>
-
-</tbody>
-
-</table>
 
 ## Écrans
 

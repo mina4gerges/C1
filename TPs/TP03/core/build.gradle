@@ -1,0 +1,21 @@
+plugins {
+    id 'java'
+    id 'eclipse'
+}
+version = '1.0'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.12'
+    runtime 'mysql:mysql-connector-java:5.1.40'
+}
+
+eclipse {
+  project {
+    // prevent project names collision in Eclipse!
+    name = 'tp03-core'
+    }
+}

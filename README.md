@@ -28,7 +28,7 @@ Références et  travaux C2, informatique AISL au Cnam Liban. Intégration de sy
 * Inversion de dépendances, JSF, CDI 
 * Revisite Rest, JPA, CRUD
 * Système et intégration de systèmes
-* de SOA à microservcies
+* de SOA à micro-services
 * Virtualisation, isolation (container), cloud
 * Introduction à Android
 
@@ -42,7 +42,7 @@ Une idée de start-up : Besoin, Etude, analyse, conception, architecture, dével
 C1:  Besoin, Etude, analyse, architecture
 C2:  conception, architecture, développement, deployment cloud
 
-* Jakarta EE: Glassfish, Tomcat,
+* Jakarta EE: Glassfish, Tomcat, Spring, Spring Boot
 * Jersey, GSON, CRUD JPA avec eclipselink
 * DevOps: Docker, kubernate, Jenkins 
 * Serverless 

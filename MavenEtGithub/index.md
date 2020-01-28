@@ -67,7 +67,7 @@ Maintenant, essayez d’exécuter `mvn clean deploy`. Vous verrez qu'il a déplo
 </properties>
 ```
 
-## Etape3 : configurez le site-maven-plugin pour qu'il soit envoyé depuis votre référentiel intermédiaire temporaire (statging) vers votre branche mvn-repo sur github:
+## Etape3 : configurez le site-maven-plugin pour qu'il soit envoyé depuis votre référentiel intermédiaire temporaire (staging) vers votre branche mvn-repo sur github:
 
 ```xml
 <build>

@@ -103,7 +103,7 @@ public class Petstore implements Serializable {
         return valeur + "\n" + date;
     }
 }
-````
+```
 
 Après compilation de cette classe, exécutez-la une première fois avec le paramètre « ecrire ». Vous verrez la présence du fichier hellopetstore.ser sur votre disque. Ce fichier contient les objets Hello et Petstore. Ensuite, ré-exécutez la avec le paramètre « lire », vous devriez voir la chaîne de caractère Hello PetStore !!! et une date affichée à l'écran.
 
@@ -386,11 +386,11 @@ Si une erreur système se produit durant la recherche d'un article, l'exception 
 
 John veut utiliser le même genre d'interface graphique que Bill. L'application « Gestion du catalogue » se présentera donc de la manière suivante :
 
-<div class="imgcenter">![createProduct.PNG](images/createProduct.PNG "createProduct.PNG")</div>
+![createProduct.PNG](images/createProduct.PNG "createProduct.PNG"
 
 Les actions sont identiques à l'application de Bill, cependant il existe 3 menus supplémentaires : la possibilité d'obtenir la liste complète des catégories, des produits et des articles. Ainsi en choisissant le menu 14, le résultat obtenu est le suivant :
 
-<div class="imgcenter">![findAll.PNG](images/findAll.PNG "findAll.PNG")</div>
+![findAll.PNG](images/findAll.PNG "findAll.PNG"
 
 Lors de la consultation d'un produit, l'application affichera l'identifiant et le nom de la catégorie auquel il est rattaché.
 
@@ -412,7 +412,7 @@ Les objets métiers constituant le catalogue de YAPS sont les catégories (Categ
 
 <span style="">  
 
-<div class="imgcenter">![CDCatalogue.png](images/CDCatalogue.png "CDCatalogue.png")</div>
+![CDCatalogue.png](images/CDCatalogue.png "CDCatalogue.png"
 
 Figure 2 - Diagramme de classes du catalogue  
 Vous pouvez interpréter le diagramme ci-dessus de la manière suivante. Une catégorie peut avoir zéro ou plusieurs produits, et un produit peut avoir zéro ou plusieurs articles. Les relations de composition nous indiquent que la suppression d'une catégorie entraînera la suppression de ses produits liés. Les relations étant bidirectionnelles, un article connait son produit et ce dernier connait sa catégorie.  
@@ -421,7 +421,7 @@ Tout comme la classe CustomerDAO, les classes CategoryDAO, ProductDAO et ItemDAO
 
 Ci-dessous un diagramme objet vous permettra de vous rendre compte concrètement de ces relations.  
 
-<div class="imgcenter">![OD_Catalogue.png](images/OD_Catalogue.png "OD_Catalogue.png")</div>
+![OD_Catalogue.png](images/OD_Catalogue.png "OD_Catalogue.png"
 
 Figure 3 - Diagramme d'objets représentant une partie du catalogue
 
@@ -461,11 +461,11 @@ Il y a maintenant deux utilisateurs : Bill et John. Ils utilisent deux applicati
 
 La classe HashMap est maintenant utilisée par plusieurs classes de type DAO qui rendent persistantes les objets dans différents fichiers, selon leur type. Par exemple, les objets Customer seront persistés dans le fichier persistentCustomer.ser, Product dans persistentProduct.ser, Item dans persistentItem.ser et Category dans persitentCategory.ser...
 
-<div class="imgcenter">![SD_Creer un produit.png](images/SD_Creer%20un%20produit.png "SD_Creer un produit.png")</div>
+![SD_Creer un produit.png](images/SD_Creer%20un%20produit.png "SD_Creer un produit.png"
 
 Figure 4 - Diagramme de séquence pour créer un produit
 
-<div class="imgcenter">![SD_Afficher un produit.png](images/SD_Afficher%20un%20produit.png "SD_Afficher un produit.png")</div>
+![SD_Afficher un produit.png](images/SD_Afficher%20un%20produit.png "SD_Afficher un produit.png"
 
 Figure 5 - Diagramme de séquence pour afficher un produit
 
@@ -480,7 +480,7 @@ Figure 5 - Diagramme de séquence pour afficher un produit
 
 La répartition des classes par paquetages est donc la suivante :
 
-<div class="imgcenter">![Repertoires.PNG](images/Repertoires.PNG "Repertoires.PNG")</div>
+![Repertoires.PNG](images/Repertoires.PNG "Repertoires.PNG"
 
 Au même niveau que les répertoires %YAPS_PETSTORE%/src et %YAPS_PETSTORE%/classes, on rajoute dans le répertoire %YAPS_PETSTORE% le fichier build.xml utilisé par Ant. Ce fichier contient notamment les cibles : yaps-clean permettant de supprimer les répertoires de compilation, yaps-compile qui permet de compiler les classes java et les classes de test, yaps-build qui crée les deux fichiers jar à déployer, et yaps-test qui exécute les classes de test.
 
@@ -488,7 +488,7 @@ Au même niveau que les répertoires %YAPS_PETSTORE%/src et %YAPS_PETSTORE%/clas
 
 L'application PetStore Customer est déployée sur le PC de Bill alors que PetStore Catalog est déployée sur le poste de John. Elles se trouvent respectivement dans les fichiers clientCustomer.jar et clientCatalog.jar sous le répertoire temporaire %YAPS_PETSTORE%/build. Pour faciliter la tâche des utilisateurs Bill et John, un simple clic sur un fichier .bat permettra de lancer les applications.
 
-<div class="imgcenter">![DD_Deploiement.png](images/DD_Deploiement.png "DD_Deploiement.png")</div>
+![DD_Deploiement.png](images/DD_Deploiement.png "DD_Deploiement.png"
 
 Figure 6 - Diagramme de déploiement
 
@@ -645,7 +645,7 @@ Refactoring ? Improving the Design of Existing Code Martin Fowler, Kent Beck, Jo
 
 <div id="xwikilicence">This wiki is licensed under a [Creative Commons 2.0](http://creativecommons.org/licenses/by/2.0/) license</div>
 
-<div id="xwikiplatformversion">XWiki Enterprise 7.1.1 - [Documentation](http://www.xwiki.org/xwiki/bin/view/Main/Documentation)</div>
+<div id="xwikiplatformversion">XWiki Enterprise 7.1.1 - [Documentation](http://www.xwiki.org/xwiki/bin/view/Main/Documentation
 
 * * *
 

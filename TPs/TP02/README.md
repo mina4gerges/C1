@@ -386,11 +386,11 @@ Si une erreur système se produit durant la recherche d'un article, l'exception 
 
 John veut utiliser le même genre d'interface graphique que Bill. L'application « Gestion du catalogue » se présentera donc de la manière suivante :
 
-![createProduct.PNG](images/createProduct.PNG "createProduct.PNG"
+![createProduct.PNG](images/createProduct.PNG "createProduct.PNG")
 
 Les actions sont identiques à l'application de Bill, cependant il existe 3 menus supplémentaires : la possibilité d'obtenir la liste complète des catégories, des produits et des articles. Ainsi en choisissant le menu 14, le résultat obtenu est le suivant :
 
-![findAll.PNG](images/findAll.PNG "findAll.PNG"
+![findAll.PNG](images/findAll.PNG "findAll.PNG")
 
 Lors de la consultation d'un produit, l'application affichera l'identifiant et le nom de la catégorie auquel il est rattaché.
 
@@ -398,7 +398,7 @@ Lors de la consultation d'un produit, l'application affichera l'identifiant et l
 
 ## Vue logique
 
-<div class="warningmessage"><span class="messagetype">Avertissement: L'application précédente possédait des exceptions fortement typées utilisables uniquement par la classe Customer telles que CustomerCreateException, CustomerUpdateException, CustomerFinderException… Si nous utilisons la même approche pour les classes Category, Product et Item nous obtiendrons trois fois plus d'exceptions. On peut tout simplement rendre ces exceptions plus génériques telles que ObjectNotFoundException, DuplicateKeyException, CreateException, UpdateException… en les renommant. La classe abstraite CustomerException peut être renommée en ApplicationException.
+Avertissement: L'application précédente possédait des exceptions fortement typées utilisables uniquement par la classe Customer telles que CustomerCreateException, CustomerUpdateException, CustomerFinderException… Si nous utilisons la même approche pour les classes Category, Product et Item nous obtiendrons trois fois plus d'exceptions. On peut tout simplement rendre ces exceptions plus génériques telles que ObjectNotFoundException, DuplicateKeyException, CreateException, UpdateException… en les renommant. La classe abstraite CustomerException peut être renommée en ApplicationException.
 
 Les objets métiers constituant le catalogue de YAPS sont les catégories (Category), les produits (Product) et les articles (Item). Ils sont liés entre eux par des liens de composition.
 
@@ -498,7 +498,7 @@ Le diagramme de déploiement montre la disposition physique des matériels qui c
 
 Vous pouvez maintenant développer l'application à partir de la version précédente, ou télécharger la liste des classes fournie pour commencer votre développement. Dans ces documents fournis, il manque les nouvelles classes du domaine, c'est-à-dire Category, Product et Item. Il y a aussi le script Ant (%YAPS_PETSTORE%/build.xml) qui permet de faciliter la compilation de l'application et de la déployer dans des fichiers jar.
 
-<div class="warningmessage"><span class="messagetype">Avertissement: Attention, rappelez-vous qu'un produit n'est valide que si sa catégorie l'est aussi. De la même manière, un article n'est correct que si son produit est valide.
+Avertissement: Attention, rappelez-vous qu'un produit n'est valide que si sa catégorie l'est aussi. De la même manière, un article n'est correct que si son produit est valide.
 
 # Recette utilisateur
 

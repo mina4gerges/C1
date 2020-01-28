@@ -266,8 +266,6 @@ Il existe trois types de relations entre classes :
 
 
 
-  
-
 ![CDCatalogue.png](images/CDCatalogue.png "CDCatalogue.png")
 
 Figure 2 - Diagramme de classes du catalogue  
@@ -277,38 +275,11 @@ Tout comme la classe CustomerDAO, les classes CategoryDAO, ProductDAO et ItemDAO
 
 Ci-dessous un diagramme objet vous permettra de vous rendre compte concrètement de ces relations.  
 
-![OD_Catalogue.png](images/OD_Catalogue.png "OD_Catalogue.png"
+![OD_Catalogue.png](images/OD_Catalogue.png "OD_Catalogue.png")
 
 Figure 3 - Diagramme d'objets représentant une partie du catalogue
 
-<div style="border:1px dashed #888888; ">Le diagramme d'objet en UML montre des objets (instances de classes dans un état particulier) et des liens (relations sémantiques) entre ces objets. Il donne une image statique et non exhaustive de ces instances.
-
-#### Le nouveau for en java 1.5
-
-Il permet une écriture simplifiée et plus lisible  
-Avant Java 1.5
-
-<div class="code">
-
-<pre><span class="java-keyword">final Collection categories;
-categories = <span class="java-keyword">new Category().findAll();
-<span class="java-keyword">for (Iterator iterator = categories.iterator(); iterator.hasNext();) {
-  <span class="java-keyword">final Category category = (Category) iterator.next();
-  <span class="java-object">System.out.println("\n" + category);
-}</pre>
-
-
-
-Depuis Java 1.5
-
-<div class="code">
-
-<pre><span class="java-keyword">final Collection<Category> categories;
-categories = <span class="java-keyword">new Category().findAll();
-<span class="java-keyword">for (Category category : categories) {
- <span class="java-object">System.out.println("\n" + category);
-}</pre>
-
+Le diagramme d'objet en UML montre des objets (instances de classes dans un état particulier) et des liens (relations sémantiques) entre ces objets. Il donne une image statique et non exhaustive de ces instances.
 
 
 ## Vue Processus
@@ -317,11 +288,11 @@ Il y a maintenant deux utilisateurs : Bill et John. Ils utilisent deux applicati
 
 La classe HashMap est maintenant utilisée par plusieurs classes de type DAO qui rendent persistantes les objets dans différents fichiers, selon leur type. Par exemple, les objets Customer seront persistés dans le fichier persistentCustomer.ser, Product dans persistentProduct.ser, Item dans persistentItem.ser et Category dans persitentCategory.ser...
 
-![SD_Creer un produit.png](images/SD_Creer%20un%20produit.png "SD_Creer un produit.png"
+![SD_Creer un produit.png](images/SD_Creer%20un%20produit.png "SD_Creer un produit.png")
 
 Figure 4 - Diagramme de séquence pour créer un produit
 
-![SD_Afficher un produit.png](images/SD_Afficher%20un%20produit.png "SD_Afficher un produit.png"
+![SD_Afficher un produit.png](images/SD_Afficher%20un%20produit.png "SD_Afficher un produit.png")
 
 Figure 5 - Diagramme de séquence pour afficher un produit
 
@@ -336,7 +307,7 @@ Cette version de PetStore possède bien plus de classes que la première. Pour n
 
 La répartition des classes par paquetages est donc la suivante :
 
-![Repertoires.PNG](images/Repertoires.PNG "Repertoires.PNG"
+![Repertoires.PNG](images/Repertoires.PNG "Repertoires.PNG")
 
 Au même niveau que les répertoires %YAPS_PETSTORE%/src et %YAPS_PETSTORE%/classes, on rajoute dans le répertoire %YAPS_PETSTORE% le fichier build.xml utilisé par Ant. Ce fichier contient notamment les cibles : yaps-clean permettant de supprimer les répertoires de compilation, yaps-compile qui permet de compiler les classes java et les classes de test, yaps-build qui crée les deux fichiers jar à déployer, et yaps-test qui exécute les classes de test.
 
@@ -344,7 +315,7 @@ Au même niveau que les répertoires %YAPS_PETSTORE%/src et %YAPS_PETSTORE%/clas
 
 L'application PetStore Customer est déployée sur le PC de Bill alors que PetStore Catalog est déployée sur le poste de John. Elles se trouvent respectivement dans les fichiers clientCustomer.jar et clientCatalog.jar sous le répertoire temporaire %YAPS_PETSTORE%/build. Pour faciliter la tâche des utilisateurs Bill et John, un simple clic sur un fichier .bat permettra de lancer les applications.
 
-![DD_Deploiement.png](images/DD_Deploiement.png "DD_Deploiement.png"
+![DD_Deploiement.png](images/DD_Deploiement.png "DD_Deploiement.png")
 
 Figure 6 - Diagramme de déploiement
 
@@ -398,112 +369,12 @@ Refactoring ? Improving the Design of Existing Code Martin Fowler, Kent Beck, Jo
 
 
 
-
-
-<div id="xdocFooter">
-
-<div class="doc-tags" id="xdocTags">Tags:
-
-<div id="xdocAuthors">
-
-<div class="xdocCreation">Créé par <span class="wikilink">[Pascal GRAFFION](/xwiki/wiki/aisl/view/XWiki/graffiop) le 2007/10/08 13:24  
+Par [Pascal GRAFFION]() le 2007/10/08 13:24  
 
 
 
 
 
-
-<div id="xwikidata" class="layoutsubsection">
-
-<div id="docextraanchors" class="invisible"><span id="Commentsanchor"> <span id="Annotationsanchor"> <span id="Attachmentsanchor"> <span id="Historyanchor"> <span id="Informationanchor"> 
-
-<div id="xwikidatacontents">
-
-<div class="floatcontainer" id="docExtraTabs">
-
-*   [Commentaires <span class="itemCount">(0)](/xwiki/wiki/aisl/view/GLG203/TP02?viewer=comments)
-*   [Annotations <span class="itemCount">(0)](/xwiki/wiki/aisl/view/GLG203/TP02?viewer=annotations)
-*   [Pièces Jointes <span class="itemCount">(9)](/xwiki/wiki/aisl/view/GLG203/TP02?viewer=attachments)
-*   [Historique](/xwiki/wiki/aisl/view/GLG203/TP02?viewer=history)
-*   [Pages liées](/xwiki/wiki/aisl/view/GLG203/TP02?viewer=information)
-
-
-
-<script type="text/javascript">var hashviewer = self.document.location.hash.substring(1); var extraInit = function(){ XWiki.displayDocExtra("Comments", "commentsinline.vm", false) }; if (hashviewer == "Comments") { var extraInit = function(){ XWiki.displayDocExtra("Comments", "commentsinline.vm", true) }; } if ($("Commentslink") != null) { $("Commentslink").href="#Comments"; Event.observe($("Commentslink"), "click", function(){ XWiki.displayDocExtra("Comments", "commentsinline.vm", false); }, false); } if ($("tmShowComments") != null) { $("tmShowComments").href="#Comments"; Event.observe($("tmShowComments"), "click", function(){ XWiki.displayDocExtra("Comments", "commentsinline.vm", true); }, false); } if ($("commentsshortcut") != null) { $("commentsshortcut").down('a').href="#comments"; Event.observe($("commentsshortcut"), "click", function(){ XWiki.displayDocExtra("Comments", "commentsinline.vm", true); }, false); } if (hashviewer == "Annotations") { var extraInit = function(){ XWiki.displayDocExtra("Annotations", "annotationsinline.vm", true) }; } if ($("Annotationslink") != null) { $("Annotationslink").href="#Annotations"; Event.observe($("Annotationslink"), "click", function(){ XWiki.displayDocExtra("Annotations", "annotationsinline.vm", false); }, false); } if ($("tmShowAnnotations") != null) { $("tmShowAnnotations").href="#Annotations"; Event.observe($("tmShowAnnotations"), "click", function(){ XWiki.displayDocExtra("Annotations", "annotationsinline.vm", true); }, false); } if ($("annotationsshortcut") != null) { $("annotationsshortcut").down('a').href="#annotations"; Event.observe($("annotationsshortcut"), "click", function(){ XWiki.displayDocExtra("Annotations", "annotationsinline.vm", true); }, false); } if (hashviewer == "Attachments") { var extraInit = function(){ XWiki.displayDocExtra("Attachments", "attachmentsinline.vm", true) }; } if ($("Attachmentslink") != null) { $("Attachmentslink").href="#Attachments"; Event.observe($("Attachmentslink"), "click", function(){ XWiki.displayDocExtra("Attachments", "attachmentsinline.vm", false); }, false); } if ($("tmShowAttachments") != null) { $("tmShowAttachments").href="#Attachments"; Event.observe($("tmShowAttachments"), "click", function(){ XWiki.displayDocExtra("Attachments", "attachmentsinline.vm", true); }, false); } if ($("attachmentsshortcut") != null) { $("attachmentsshortcut").down('a').href="#attachments"; Event.observe($("attachmentsshortcut"), "click", function(){ XWiki.displayDocExtra("Attachments", "attachmentsinline.vm", true); }, false); } if (hashviewer == "History") { var extraInit = function(){ XWiki.displayDocExtra("History", "historyinline.vm", true) }; } if ($("Historylink") != null) { $("Historylink").href="#History"; Event.observe($("Historylink"), "click", function(){ XWiki.displayDocExtra("History", "historyinline.vm", false); }, false); } if ($("tmShowHistory") != null) { $("tmShowHistory").href="#History"; Event.observe($("tmShowHistory"), "click", function(){ XWiki.displayDocExtra("History", "historyinline.vm", true); }, false); } if ($("historyshortcut") != null) { $("historyshortcut").down('a').href="#history"; Event.observe($("historyshortcut"), "click", function(){ XWiki.displayDocExtra("History", "historyinline.vm", true); }, false); } if (hashviewer == "Information") { var extraInit = function(){ XWiki.displayDocExtra("Information", "informationinline.vm", true) }; } if ($("Informationlink") != null) { $("Informationlink").href="#Information"; Event.observe($("Informationlink"), "click", function(){ XWiki.displayDocExtra("Information", "informationinline.vm", false); }, false); } if ($("tmShowInformation") != null) { $("tmShowInformation").href="#Information"; Event.observe($("tmShowInformation"), "click", function(){ XWiki.displayDocExtra("Information", "informationinline.vm", true); }, false); } if ($("informationshortcut") != null) { $("informationshortcut").down('a').href="#information"; Event.observe($("informationshortcut"), "click", function(){ XWiki.displayDocExtra("Information", "informationinline.vm", true); }, false); } document.observe("dom:loaded", extraInit, false);</script>
-
-
-
-
-
-
-
-
-
-<div id="rightPanels" class="panels right panel-width-Medium">
-
-<div class="panel expanded SpaceDocs">
-
-# GLG203
-
-<div class="xwikipanelcontents">
-
-*   <span class="wikilink">[Agenda](/xwiki/wiki/aisl/view/GLG203/Agenda)
-*   <span class="wikilink">[Enseignement](/xwiki/wiki/aisl/view/GLG203/Enseignement)
-*   <span class="wikilink">[TP01](/xwiki/wiki/aisl/view/GLG203/TP01)
-*   <span class="wikilink">[TP02](/xwiki/wiki/aisl/view/GLG203/TP02)
-*   <span class="wikilink">[TP03](/xwiki/wiki/aisl/view/GLG203/TP03)
-*   <span class="wikilink">[TP04](/xwiki/wiki/aisl/view/GLG203/TP04)
-*   <span class="wikilink">[TP05](/xwiki/wiki/aisl/view/GLG203/TP05)
-*   <span class="wikilink">[TP05_SP](/xwiki/wiki/aisl/view/GLG203/TP05_SP)
-*   <span class="wikilink">[TP06](/xwiki/wiki/aisl/view/GLG203/TP06)
-*   <span class="wikilink">[TP06_SP](/xwiki/wiki/aisl/view/GLG203/TP06_SP)
-*   <span class="wikilink">[TP07](/xwiki/wiki/aisl/view/GLG203/TP07)
-*   <span class="wikilink">[TP07_SP](/xwiki/wiki/aisl/view/GLG203/TP07_SP)
-*   <span class="wikilink">[TP08](/xwiki/wiki/aisl/view/GLG203/TP08)
-*   <span class="wikilink">[TP08_SP](/xwiki/wiki/aisl/view/GLG203/TP08_SP)
-*   <span class="wikilink">[TP09](/xwiki/wiki/aisl/view/GLG203/TP09)
-*   <span class="wikilink">[TP09_SP](/xwiki/wiki/aisl/view/GLG203/TP09_SP)
-*   <span class="wikilink">[TP10](/xwiki/wiki/aisl/view/GLG203/TP10)
-*   <span class="wikilink">[TP10_SP](/xwiki/wiki/aisl/view/GLG203/TP10_SP)
-*   <span class="wikilink">[TP11_EJB3_GlassFish](/xwiki/wiki/aisl/view/GLG203/TP11_EJB3_GlassFish)
-*   <span class="wikilink">[TP11_SP](/xwiki/wiki/aisl/view/GLG203/TP11_SP)
-*   <span class="wikilink">[TP12_JPA_GlassFish](/xwiki/wiki/aisl/view/GLG203/TP12_JPA_GlassFish)
-*   <span class="wikilink">[TP12_SP](/xwiki/wiki/aisl/view/GLG203/TP12_SP)
-*   <span class="wikilink">[WebHome](/xwiki/wiki/aisl/view/GLG203/)
-*   <span class="wikilink">[WebPreferences](/xwiki/wiki/aisl/view/GLG203/WebPreferences)
-*   <span class="wikilink">[WikiTests](/xwiki/wiki/aisl/view/GLG203/WikiTests)
-
-
-
-
-
-<div class="panel expanded MyRecentModifications">
-
-# Mes pages éditées
-
-<div class="xwikipanelcontents">
-
-*   [$escapetool.xml($recentDoc.plainTitle)]($recentDoc.getURL())
-
-
-
-
-
-
-
-
-
-
-
-<div id="footerglobal" class="layoutsection">
-
-* * *
-
-<div id="xwikilicence">This wiki is licensed under a [Creative Commons 2.0](http://creativecommons.org/licenses/by/2.0/) license
-
-<div id="xwikiplatformversion">XWiki Enterprise 7.1.1 - [Documentation](http://www.xwiki.org/xwiki/bin/view/Main/Documentation
-
-* * *
 
 
 

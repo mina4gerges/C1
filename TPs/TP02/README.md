@@ -148,7 +148,7 @@ Cette gestion du catalogue sera effectuée par John. L'application sera uniqueme
 
 Figure 1 - Diagramme de cas d'utilisation de la gestion du catalogue
 
-<div class="infomessage">Vous remarquerez que la granularité des cas d'utilisation est différente de celle de la première version de l'application. Si YAPS avait utilisé la même granularité pour décrire ses use cases, nous aurions les cas d'utilisations suivants : Créer une catégorie, supprimer une catégorie, mettre à jour une catégorie, rechercher une catégorie, créer un produit, supprimer un produit… Pour des cas d'utilisation simples, il est possible de les regrouper dans un seul. Notez aussi la présence des relations <<include>> entre cas d'utilisation. Cela signifie que pour gérer le catalogue il faut au moins une fois gérer les catégories, les produits et les articles.</include></div>
+Vous remarquerez que la granularité des cas d'utilisation est différente de celle de la première version de l'application. Si YAPS avait utilisé la même granularité pour décrire ses use cases, nous aurions les cas d'utilisations suivants : Créer une catégorie, supprimer une catégorie, mettre à jour une catégorie, rechercher une catégorie, créer un produit, supprimer un produit… Pour des cas d'utilisation simples, il est possible de les regrouper dans un seul. Notez aussi la présence des relations <<include>> entre cas d'utilisation. Cela signifie que pour gérer le catalogue il faut au moins une fois gérer les catégories, les produits et les articles.</include>
 
 ### Cas d'utilisation « Gérer les catégories »
 
@@ -382,7 +382,7 @@ Si une erreur système se produit durant la recherche d'un article, l'exception 
 
 </table>
 
-## Ecrans
+## Écrans
 
 John veut utiliser le même genre d'interface graphique que Bill. L'application « Gestion du catalogue » se présentera donc de la manière suivante :
 
@@ -398,21 +398,21 @@ Lors de la consultation d'un produit, l'application affichera l'identifiant et l
 
 ## Vue logique
 
-<div class="warningmessage"><span class="messagetype">Avertissement: L'application précédente possédait des exceptions fortement typées utilisables uniquement par la classe Customer telles que CustomerCreateException, CustomerUpdateException, CustomerFinderException… Si nous utilisons la même approche pour les classes Category, Product et Item nous obtiendrons trois fois plus d'exceptions. On peut tout simplement rendre ces exceptions plus génériques telles que ObjectNotFoundException, DuplicateKeyException, CreateException, UpdateException… en les renommant. La classe abstraite CustomerException peut être renommée en ApplicationException.</div>
+<div class="warningmessage"><span class="messagetype">Avertissement: L'application précédente possédait des exceptions fortement typées utilisables uniquement par la classe Customer telles que CustomerCreateException, CustomerUpdateException, CustomerFinderException… Si nous utilisons la même approche pour les classes Category, Product et Item nous obtiendrons trois fois plus d'exceptions. On peut tout simplement rendre ces exceptions plus génériques telles que ObjectNotFoundException, DuplicateKeyException, CreateException, UpdateException… en les renommant. La classe abstraite CustomerException peut être renommée en ApplicationException.
 
 Les objets métiers constituant le catalogue de YAPS sont les catégories (Category), les produits (Product) et les articles (Item). Ils sont liés entre eux par des liens de composition.
 
-<div class="infomessage">Il existe trois types de relations entre classes :
+Il existe trois types de relations entre classes :
 
 *   **Association** : Relation sémantique entre deux ou plusieurs classes. C'est une connexion, bidirectionnelle par défaut, entre leurs instances. Sous-type de Relation représentée par une ligne.
 *   **Agrégation** : Une forme spéciale d'association qui spécifie une relation tout-partie entre l'agrégat (le tout) et une partie. Elle est représentée par une ligne avec un losange vide à une extrémité.
 *   **Composition** : Une forme d'agrégation qui exprime une forte propriété entre le tout et les parties, ainsi qu'une subordination entre l'existence des parties et du tout. Les parties, dont la multiplicité est non figée, peuvent être créées après le composite lui-même, mais une fois créées, elles vivent et meurent avec lui (c'est à dire qu'elles partagent sa durée de vie). De telles parties peuvent également être explicitement retirées avant la mort du composite. La composition peut être récursive. Représenté par une ligne avec un losange plein (noir) à une extrémité.
 
-</div>
 
-<span style="">  
 
-![CDCatalogue.png](images/CDCatalogue.png "CDCatalogue.png"
+  
+
+![CDCatalogue.png](images/CDCatalogue.png "CDCatalogue.png")
 
 Figure 2 - Diagramme de classes du catalogue  
 Vous pouvez interpréter le diagramme ci-dessus de la manière suivante. Une catégorie peut avoir zéro ou plusieurs produits, et un produit peut avoir zéro ou plusieurs articles. Les relations de composition nous indiquent que la suppression d'une catégorie entraînera la suppression de ses produits liés. Les relations étant bidirectionnelles, un article connait son produit et ce dernier connait sa catégorie.  
@@ -425,7 +425,7 @@ Ci-dessous un diagramme objet vous permettra de vous rendre compte concrètement
 
 Figure 3 - Diagramme d'objets représentant une partie du catalogue
 
-<div style="border:1px dashed #888888; ">Le diagramme d'objet en UML montre des objets (instances de classes dans un état particulier) et des liens (relations sémantiques) entre ces objets. Il donne une image statique et non exhaustive de ces instances.</div>
+<div style="border:1px dashed #888888; ">Le diagramme d'objet en UML montre des objets (instances de classes dans un état particulier) et des liens (relations sémantiques) entre ces objets. Il donne une image statique et non exhaustive de ces instances.
 
 #### Le nouveau for en java 1.5
 
@@ -441,7 +441,7 @@ categories = <span class="java-keyword">new Category().findAll();
   <span class="java-object">System.out.println("\n" + category);
 }</pre>
 
-</div>
+
 
 Depuis Java 1.5
 
@@ -453,7 +453,7 @@ categories = <span class="java-keyword">new Category().findAll();
  <span class="java-object">System.out.println("\n" + category);
 }</pre>
 
-</div>
+
 
 ## Vue Processus
 
@@ -471,12 +471,12 @@ Figure 5 - Diagramme de séquence pour afficher un produit
 
 ## Vue implementation
 
-<div class="infomessage">Cette version de PetStore possède bien plus de classes que la première. Pour ne pas les laisser toutes dans le paquetage com.yaps.petstore nous utiliserons deux remaniements de code :
+Cette version de PetStore possède bien plus de classes que la première. Pour ne pas les laisser toutes dans le paquetage com.yaps.petstore nous utiliserons deux remaniements de code :
 
 *   **Extraire Paquetage** (Extract Package) : Un paquetage possède trop de classes => créer de nouveaux paquetages.
 *   **Déplacer Classe** (Move Class) : Une classe se trouve dans un paquetage avec d'autres classes qui ne lui correspondent pas => déplacer la classe vers un autre paquetage.
 
-</div>
+
 
 La répartition des classes par paquetages est donc la suivante :
 
@@ -492,13 +492,13 @@ L'application PetStore Customer est déployée sur le PC de Bill alors que PetSt
 
 Figure 6 - Diagramme de déploiement
 
-<div class="infomessage">Le diagramme de déploiement montre la disposition physique des matériels qui composent le système et la répartition des composants sur ces matériels. Les ressources matérielles sont représentées sous forme de noeuds (les cubes) qui peuvent être liés entre eux à l'aide d'un support de communication.</div>
+Le diagramme de déploiement montre la disposition physique des matériels qui composent le système et la répartition des composants sur ces matériels. Les ressources matérielles sont représentées sous forme de noeuds (les cubes) qui peuvent être liés entre eux à l'aide d'un support de communication.
 
 # Implémentation
 
 Vous pouvez maintenant développer l'application à partir de la version précédente, ou télécharger la liste des classes fournie pour commencer votre développement. Dans ces documents fournis, il manque les nouvelles classes du domaine, c'est-à-dire Category, Product et Item. Il y a aussi le script Ant (%YAPS_PETSTORE%/build.xml) qui permet de faciliter la compilation de l'application et de la déployer dans des fichiers jar.
 
-<div class="warningmessage"><span class="messagetype">Avertissement: Attention, rappelez-vous qu'un produit n'est valide que si sa catégorie l'est aussi. De la même manière, un article n'est correct que si son produit est valide.</div>
+<div class="warningmessage"><span class="messagetype">Avertissement: Attention, rappelez-vous qu'un produit n'est valide que si sa catégorie l'est aussi. De la même manière, un article n'est correct que si son produit est valide.
 
 # Recette utilisateur
 
@@ -540,26 +540,26 @@ Deployment Diagram in UML <span class="nobr">[http://www.developer.com/design/ar
 
 Refactoring ? Improving the Design of Existing Code Martin Fowler, Kent Beck, John Brant, William Opdyke, Don Roberts. Addison-Wesley. 1999.
 
-</div>
 
-</div>
+
+
 
 <div id="xdocFooter">
 
-<div class="doc-tags" id="xdocTags">Tags:</div>
+<div class="doc-tags" id="xdocTags">Tags:
 
 <div id="xdocAuthors">
 
 <div class="xdocCreation">Créé par <span class="wikilink">[Pascal GRAFFION](/xwiki/wiki/aisl/view/XWiki/graffiop) le 2007/10/08 13:24  
-</div>
 
-</div>
 
-</div>
+
+
+
 
 <div id="xwikidata" class="layoutsubsection">
 
-<div id="docextraanchors" class="invisible"><span id="Commentsanchor"> <span id="Annotationsanchor"> <span id="Attachmentsanchor"> <span id="Historyanchor"> <span id="Informationanchor"> </div>
+<div id="docextraanchors" class="invisible"><span id="Commentsanchor"> <span id="Annotationsanchor"> <span id="Attachmentsanchor"> <span id="Historyanchor"> <span id="Informationanchor"> 
 
 <div id="xwikidatacontents">
 
@@ -571,17 +571,17 @@ Refactoring ? Improving the Design of Existing Code Martin Fowler, Kent Beck, Jo
 *   [Historique](/xwiki/wiki/aisl/view/GLG203/TP02?viewer=history)
 *   [Pages liées](/xwiki/wiki/aisl/view/GLG203/TP02?viewer=information)
 
-</div>
 
-<script type="text/javascript">var hashviewer = self.document.location.hash.substring(1); var extraInit = function(){ XWiki.displayDocExtra("Comments", "commentsinline.vm", false) }; if (hashviewer == "Comments") { var extraInit = function(){ XWiki.displayDocExtra("Comments", "commentsinline.vm", true) }; } if ($("Commentslink") != null) { $("Commentslink").href="#Comments"; Event.observe($("Commentslink"), "click", function(){ XWiki.displayDocExtra("Comments", "commentsinline.vm", false); }, false); } if ($("tmShowComments") != null) { $("tmShowComments").href="#Comments"; Event.observe($("tmShowComments"), "click", function(){ XWiki.displayDocExtra("Comments", "commentsinline.vm", true); }, false); } if ($("commentsshortcut") != null) { $("commentsshortcut").down('a').href="#comments"; Event.observe($("commentsshortcut"), "click", function(){ XWiki.displayDocExtra("Comments", "commentsinline.vm", true); }, false); } if (hashviewer == "Annotations") { var extraInit = function(){ XWiki.displayDocExtra("Annotations", "annotationsinline.vm", true) }; } if ($("Annotationslink") != null) { $("Annotationslink").href="#Annotations"; Event.observe($("Annotationslink"), "click", function(){ XWiki.displayDocExtra("Annotations", "annotationsinline.vm", false); }, false); } if ($("tmShowAnnotations") != null) { $("tmShowAnnotations").href="#Annotations"; Event.observe($("tmShowAnnotations"), "click", function(){ XWiki.displayDocExtra("Annotations", "annotationsinline.vm", true); }, false); } if ($("annotationsshortcut") != null) { $("annotationsshortcut").down('a').href="#annotations"; Event.observe($("annotationsshortcut"), "click", function(){ XWiki.displayDocExtra("Annotations", "annotationsinline.vm", true); }, false); } if (hashviewer == "Attachments") { var extraInit = function(){ XWiki.displayDocExtra("Attachments", "attachmentsinline.vm", true) }; } if ($("Attachmentslink") != null) { $("Attachmentslink").href="#Attachments"; Event.observe($("Attachmentslink"), "click", function(){ XWiki.displayDocExtra("Attachments", "attachmentsinline.vm", false); }, false); } if ($("tmShowAttachments") != null) { $("tmShowAttachments").href="#Attachments"; Event.observe($("tmShowAttachments"), "click", function(){ XWiki.displayDocExtra("Attachments", "attachmentsinline.vm", true); }, false); } if ($("attachmentsshortcut") != null) { $("attachmentsshortcut").down('a').href="#attachments"; Event.observe($("attachmentsshortcut"), "click", function(){ XWiki.displayDocExtra("Attachments", "attachmentsinline.vm", true); }, false); } if (hashviewer == "History") { var extraInit = function(){ XWiki.displayDocExtra("History", "historyinline.vm", true) }; } if ($("Historylink") != null) { $("Historylink").href="#History"; Event.observe($("Historylink"), "click", function(){ XWiki.displayDocExtra("History", "historyinline.vm", false); }, false); } if ($("tmShowHistory") != null) { $("tmShowHistory").href="#History"; Event.observe($("tmShowHistory"), "click", function(){ XWiki.displayDocExtra("History", "historyinline.vm", true); }, false); } if ($("historyshortcut") != null) { $("historyshortcut").down('a').href="#history"; Event.observe($("historyshortcut"), "click", function(){ XWiki.displayDocExtra("History", "historyinline.vm", true); }, false); } if (hashviewer == "Information") { var extraInit = function(){ XWiki.displayDocExtra("Information", "informationinline.vm", true) }; } if ($("Informationlink") != null) { $("Informationlink").href="#Information"; Event.observe($("Informationlink"), "click", function(){ XWiki.displayDocExtra("Information", "informationinline.vm", false); }, false); } if ($("tmShowInformation") != null) { $("tmShowInformation").href="#Information"; Event.observe($("tmShowInformation"), "click", function(){ XWiki.displayDocExtra("Information", "informationinline.vm", true); }, false); } if ($("informationshortcut") != null) { $("informationshortcut").down('a').href="#information"; Event.observe($("informationshortcut"), "click", function(){ XWiki.displayDocExtra("Information", "informationinline.vm", true); }, false); } document.observe("dom:loaded", extraInit, false);</script></div>
 
-</div>
+<script type="text/javascript">var hashviewer = self.document.location.hash.substring(1); var extraInit = function(){ XWiki.displayDocExtra("Comments", "commentsinline.vm", false) }; if (hashviewer == "Comments") { var extraInit = function(){ XWiki.displayDocExtra("Comments", "commentsinline.vm", true) }; } if ($("Commentslink") != null) { $("Commentslink").href="#Comments"; Event.observe($("Commentslink"), "click", function(){ XWiki.displayDocExtra("Comments", "commentsinline.vm", false); }, false); } if ($("tmShowComments") != null) { $("tmShowComments").href="#Comments"; Event.observe($("tmShowComments"), "click", function(){ XWiki.displayDocExtra("Comments", "commentsinline.vm", true); }, false); } if ($("commentsshortcut") != null) { $("commentsshortcut").down('a').href="#comments"; Event.observe($("commentsshortcut"), "click", function(){ XWiki.displayDocExtra("Comments", "commentsinline.vm", true); }, false); } if (hashviewer == "Annotations") { var extraInit = function(){ XWiki.displayDocExtra("Annotations", "annotationsinline.vm", true) }; } if ($("Annotationslink") != null) { $("Annotationslink").href="#Annotations"; Event.observe($("Annotationslink"), "click", function(){ XWiki.displayDocExtra("Annotations", "annotationsinline.vm", false); }, false); } if ($("tmShowAnnotations") != null) { $("tmShowAnnotations").href="#Annotations"; Event.observe($("tmShowAnnotations"), "click", function(){ XWiki.displayDocExtra("Annotations", "annotationsinline.vm", true); }, false); } if ($("annotationsshortcut") != null) { $("annotationsshortcut").down('a').href="#annotations"; Event.observe($("annotationsshortcut"), "click", function(){ XWiki.displayDocExtra("Annotations", "annotationsinline.vm", true); }, false); } if (hashviewer == "Attachments") { var extraInit = function(){ XWiki.displayDocExtra("Attachments", "attachmentsinline.vm", true) }; } if ($("Attachmentslink") != null) { $("Attachmentslink").href="#Attachments"; Event.observe($("Attachmentslink"), "click", function(){ XWiki.displayDocExtra("Attachments", "attachmentsinline.vm", false); }, false); } if ($("tmShowAttachments") != null) { $("tmShowAttachments").href="#Attachments"; Event.observe($("tmShowAttachments"), "click", function(){ XWiki.displayDocExtra("Attachments", "attachmentsinline.vm", true); }, false); } if ($("attachmentsshortcut") != null) { $("attachmentsshortcut").down('a').href="#attachments"; Event.observe($("attachmentsshortcut"), "click", function(){ XWiki.displayDocExtra("Attachments", "attachmentsinline.vm", true); }, false); } if (hashviewer == "History") { var extraInit = function(){ XWiki.displayDocExtra("History", "historyinline.vm", true) }; } if ($("Historylink") != null) { $("Historylink").href="#History"; Event.observe($("Historylink"), "click", function(){ XWiki.displayDocExtra("History", "historyinline.vm", false); }, false); } if ($("tmShowHistory") != null) { $("tmShowHistory").href="#History"; Event.observe($("tmShowHistory"), "click", function(){ XWiki.displayDocExtra("History", "historyinline.vm", true); }, false); } if ($("historyshortcut") != null) { $("historyshortcut").down('a').href="#history"; Event.observe($("historyshortcut"), "click", function(){ XWiki.displayDocExtra("History", "historyinline.vm", true); }, false); } if (hashviewer == "Information") { var extraInit = function(){ XWiki.displayDocExtra("Information", "informationinline.vm", true) }; } if ($("Informationlink") != null) { $("Informationlink").href="#Information"; Event.observe($("Informationlink"), "click", function(){ XWiki.displayDocExtra("Information", "informationinline.vm", false); }, false); } if ($("tmShowInformation") != null) { $("tmShowInformation").href="#Information"; Event.observe($("tmShowInformation"), "click", function(){ XWiki.displayDocExtra("Information", "informationinline.vm", true); }, false); } if ($("informationshortcut") != null) { $("informationshortcut").down('a').href="#information"; Event.observe($("informationshortcut"), "click", function(){ XWiki.displayDocExtra("Information", "informationinline.vm", true); }, false); } document.observe("dom:loaded", extraInit, false);</script>
 
-</div>
 
-</div>
 
-</div>
+
+
+
+
+
 
 <div id="rightPanels" class="panels right panel-width-Medium">
 
@@ -617,9 +617,9 @@ Refactoring ? Improving the Design of Existing Code Martin Fowler, Kent Beck, Jo
 *   <span class="wikilink">[WebPreferences](/xwiki/wiki/aisl/view/GLG203/WebPreferences)
 *   <span class="wikilink">[WikiTests](/xwiki/wiki/aisl/view/GLG203/WikiTests)
 
-</div>
 
-</div>
+
+
 
 <div class="panel expanded MyRecentModifications">
 
@@ -629,28 +629,27 @@ Refactoring ? Improving the Design of Existing Code Martin Fowler, Kent Beck, Jo
 
 *   [$escapetool.xml($recentDoc.plainTitle)]($recentDoc.getURL())
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
+
+
+
+
+
 
 <div id="footerglobal" class="layoutsection">
 
 * * *
 
-<div id="xwikilicence">This wiki is licensed under a [Creative Commons 2.0](http://creativecommons.org/licenses/by/2.0/) license</div>
+<div id="xwikilicence">This wiki is licensed under a [Creative Commons 2.0](http://creativecommons.org/licenses/by/2.0/) license
 
 <div id="xwikiplatformversion">XWiki Enterprise 7.1.1 - [Documentation](http://www.xwiki.org/xwiki/bin/view/Main/Documentation
 
 * * *
 
-</div>
 
-</div>
 
-</div>
+
+

@@ -5,17 +5,20 @@
  */
 package com.yaps.petstore.domain;
 
+import com.yaps.petstore.exception.CheckException;
 import java.io.Serializable;
+import java.util.Collection;
 
 /**
  *
  * @author mina2
  */
-public class Category  implements Serializable {
+public class Category implements Serializable {
 
     String _id = null;
     String _name = null;
     String _description = null;
+    Collection _products = null;
 
     public Category(String id) {
         _id = id;
@@ -31,7 +34,7 @@ public class Category  implements Serializable {
         _id = id;
     }
 
-    public void seName(String name) {
+    public void setName(String name) {
         _name = name;
     }
 
@@ -51,6 +54,22 @@ public class Category  implements Serializable {
         return _description;
     }
 
+    public Collection getProducts() {
+        return _products;
+    }
+
+    public void checkData() throws CheckException {
+        if (_id == null || "".equals(_id)) {
+            throw new CheckException("Invalid category id");
+        }
+        if (_name == null || "".equals(_name)) {
+            throw new CheckException("Invalid category name");
+        }
+        if (_description == null || "".equals(_description)) {
+            throw new CheckException("Invalid category description");
+        }
+    }
+
     @Override
     public String toString() {
         final StringBuffer buf = new StringBuffer();
@@ -62,4 +81,3 @@ public class Category  implements Serializable {
         return buf.toString();
     }
 }
-

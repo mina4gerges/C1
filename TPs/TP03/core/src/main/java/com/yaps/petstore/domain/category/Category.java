@@ -5,11 +5,14 @@
  */
 package com.yaps.petstore.domain.category;
 
+import com.yaps.petstore.domain.DomainObject;
+import java.io.Serializable;
+
 /**
  *
  * @author mina2
  */
-public class Category {
+public final class Category extends DomainObject implements Serializable {
 
     String _id = null;
     String _name = null;
@@ -25,7 +28,8 @@ public class Category {
         _description = description;
     }
 
-    public void settId(String id) {
+    @Override
+    public void setId(String id) {
         _id = id;
     }
 
@@ -37,6 +41,7 @@ public class Category {
         _description = description;
     }
 
+    @Override
     public String getId() {
         return _id;
     }
@@ -49,6 +54,7 @@ public class Category {
         return _description;
     }
 
+    @Override
     public String toString() {
         final StringBuffer buf = new StringBuffer();
         buf.append("\n\tCategory {");
